@@ -35,9 +35,6 @@ export class VotesDo extends DurableObject {
 
 		votes = (await this.ctx.storage.get('triedDo')) as { yes: number; no: number };
 
-		// for (let socket of this.ctx.getWebSockets()) {
-		// 	socket.send(JSON.stringify(await this.ctx.storage.get('triedDo')));
-		// }
 		return JSON.stringify(votes);
 	}
 
